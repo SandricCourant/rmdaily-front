@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './services/auth.service';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { ItemsComponent } from './items/items.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     LoginComponent,
     AccueilComponent,
     RegisterComponent,
-    NavbarComponent
+    NavbarComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,

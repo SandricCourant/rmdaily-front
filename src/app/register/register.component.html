@@ -4,28 +4,28 @@
     <form (ngSubmit)="onSubmitForm()">
         <h1>Inscription</h1>
         <div>
-            <label for="Username">Pseudo: </label>
-            <input type="text" id="login" name="username" [(ngModel)]="username">
+            <label for=1>Pseudo: </label>
+            <input type="text" id=1 name="username" [(ngModel)]="username" autocomplete="username">
         </div>
         <div>
-            <label for="nm">Nom: </label>
-            <input type="text" id="nm" name="lastname" [(ngModel)]="lastname">
+            <label for=2>Nom: </label>
+            <input type="text" id=2 name="lastname" [(ngModel)]="lastname" autocomplete="family-name">
         </div>
         <div>
-            <label for="first">Prénom: </label>
-            <input type="text" id="first" name="firstname" [(ngModel)]="firstname">
+            <label for=3>Prénom: </label>
+            <input type="text" id=3 name="firstname" [(ngModel)]="firstname" autocomplete="given-name">
         </div>
         <div>
-            <label for="email">Email: </label>
-            <input type="email" id="email" name="email" [(ngModel)]="email">
+            <label for=4>Email: </label>
+            <input type="email" id=4 name="email" [(ngModel)]="email" autocomplete="email">
         </div>
         <div>
-            <label for="tel">Numéro de portable: </label>
-            <input type="tel" id="tel" name="phoneNumber" [(ngModel)]="phoneNumber">
+            <label for=5>Numéro de portable: </label>
+            <input type="tel" id=5 name="phoneNumber" [(ngModel)]="phoneNumber" autocomplete="tel">
         </div>
         <div>
-            <label for="mdp">Mot de passe: </label>
-            <input type="password" id="mdp" name="password" [(ngModel)]="password">
+            <label for=6>Mot de passe: </label>
+            <input type="password" id=6 name="password" [(ngModel)]="password" autocomplete="new-password">
         </div>
         <div class="button">
             <button type="submit">Envoyer</button>
