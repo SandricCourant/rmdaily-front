@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
+
   username: string = "";
   password: string = "";
   firstname: string = "";
@@ -20,15 +21,15 @@ export class RegisterComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  onContinue(): void {
-    this.router.navigateByUrl('/accueil');
-  }
-
   onSubmitForm() {
     this.authService.postRegister(this.username, this.password, this.firstname, this.lastname, this.email, this.phoneNumber).subscribe((data: any) => {
       console.log(data);
       this.authService.setToken(data.token);
-      this.onContinue();
+      this.authService.setLogin(true);
     })
+  }
+  
+  isLogin(): boolean {
+    return this.authService.getLogin();
   }
 }

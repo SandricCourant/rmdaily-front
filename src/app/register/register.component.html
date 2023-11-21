@@ -1,7 +1,8 @@
 <div class="container col">
     <div class="logo"><img src="assets\images\rentMydailyLogoNoFill.png"
             alt="Logo du site symbolisant une vague verte souflant la poussière de vos objets"></div>
-    <form (ngSubmit)="onSubmitForm()">
+    
+    <form (ngSubmit)="onSubmitForm()" *ngIf="!isLogin()">
         <h1>Inscription</h1>
         <div>
             <label for=1>Pseudo: </label>
@@ -16,7 +17,7 @@
             <input type="text" id=3 name="firstname" [(ngModel)]="firstname" autocomplete="given-name">
         </div>
         <div>
-            <label for=4>Email: </label>
+            <label for=4>Email:* </label>
             <input type="email" id=4 name="email" [(ngModel)]="email" autocomplete="email">
         </div>
         <div>
@@ -24,12 +25,14 @@
             <input type="tel" id=5 name="phoneNumber" [(ngModel)]="phoneNumber" autocomplete="tel">
         </div>
         <div>
-            <label for=6>Mot de passe: </label>
+            <label for=6>Mot de passe:* </label>
             <input type="password" id=6 name="password" [(ngModel)]="password" autocomplete="new-password">
         </div>
         <div class="button">
             <button type="submit">Envoyer</button>
         </div>
-
     </form>
+    <div class = "success" *ngIf="isLogin()">
+        <p>Vous êtes inscrit !</p>
+        <a [routerLink]="['../accueil']">Revenir à la page d'accueil</a>
 </div>
