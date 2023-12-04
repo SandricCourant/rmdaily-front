@@ -11,16 +11,12 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit{
   username: string = "";
   password: string = "";
-  login = false;
+  login : boolean;
 
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) { this.login = false }
 
   ngOnInit(): void {
-  }
-
-  onContinue(): void {
-    this.router.navigateByUrl('/accueil');
   }
 
   onSubmitForm() {
@@ -28,7 +24,6 @@ export class LoginComponent implements OnInit{
       console.log(data);
       this.authService.setToken(data.token)
       this.authService.setLogin(true);
-      this.onContinue();
     });
     this.login = this.authService.getLogin();
   }

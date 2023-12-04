@@ -1,6 +1,6 @@
 <div class="logo"><img src="assets\images\rentMydailyLogoNoFill.png" alt="Logo du site symbolisant une vague verte souflant la poussière de vos objets"></div>
 
-<form #f="ngForm" (ngSubmit)="f.form.valid && onSubmitForm()">
+<form #f="ngForm" (ngSubmit)="f.form.valid && onSubmitForm()" *ngIf="!isLogin()">
     <h1>Connexion</h1>
     <div>
         <label for="login">Identifiant: </label>
@@ -18,3 +18,7 @@
         <p>Login failed</p>
     </div>
 </form>
+<div class="success" *ngIf="isLogin()">
+    <p>Vous êtes connecté !</p>
+    <a [routerLink]="['../accueil']">Revenir à la page d'accueil</a>
+</div>
